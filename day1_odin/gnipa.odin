@@ -3,6 +3,7 @@ package gnipa
 import "core:fmt"
 import "core:io"
 import "core:os"
+import "core:slice"
 import "core:strconv"
 import "core:strings"
 
@@ -50,9 +51,27 @@ main :: proc() {
 			append(&først_collone.nummers, first_num)
 		}
 
+		if sec_num, ok := strconv.parse_int(strings.trim_space(nums[1])); ok {
+			append(&andre_collone.nummers, sec_num)
+		}
+
+
 		delete(nums)
 
 	}
 
-	fmt.println("debug value", først_collone.nummers)
+	//https://odin-lang.org/docs/overview/#sort-slices
+	slice1 := først_collone.nummers[:]
+	slice2 := andre_collone.nummers[:]
+
+	fmt.println(slice1)
+	slice.sort(slice1)
+	slice.sort(slice2)
+
+	fmt.println(slice1)
+
+	//	fmt.println(først_collone.nummers)
+	fmt.println("---------------------")
+	//	fmt.println(andre_collone.nummers)
+	fmt.println("---------------------")
 }
