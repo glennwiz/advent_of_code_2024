@@ -5,6 +5,10 @@ import "core:io"
 import "core:os"
 import "core:strings"
 
+liste :: struct {
+	nummers: [dynamic]int,
+}
+
 main :: proc() {
 	path := "C:/dev/advent_of_code_2024/data/20241"
 
@@ -29,6 +33,15 @@ main :: proc() {
 		fmt.println(line)
 	}
 
+	//init structs
+	først_collone := liste {
+		nummers = make([dynamic]int),
+	}
+	andre_collone := liste {
+		nummers = make([dynamic]int),
+	}
+	defer delete(først_collone.nummers)
+	defer delete(andre_collone.nummers)
 
-	fmt.println("the beginning")
+
 }
