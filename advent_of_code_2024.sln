@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day1", "day1\day1.csproj", "{165348BB-6DD1-4088-977A-C8FAD3CE49ED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data_reader", "data_reader\data_reader.csproj", "{D7AD9780-2061-42C3-BEFD-11D88936D123}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{165348BB-6DD1-4088-977A-C8FAD3CE49ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165348BB-6DD1-4088-977A-C8FAD3CE49ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165348BB-6DD1-4088-977A-C8FAD3CE49ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165348BB-6DD1-4088-977A-C8FAD3CE49ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7AD9780-2061-42C3-BEFD-11D88936D123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7AD9780-2061-42C3-BEFD-11D88936D123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7AD9780-2061-42C3-BEFD-11D88936D123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7AD9780-2061-42C3-BEFD-11D88936D123}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
