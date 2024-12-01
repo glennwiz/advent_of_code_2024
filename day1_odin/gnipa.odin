@@ -42,7 +42,7 @@ main :: proc() {
 
 	the_text := string(data)
 	for line in strings.split_lines_iterator(&the_text) {
-		fmt.println(line)
+		//		fmt.println(line)
 
 		nums := strings.split(line, "   ")
 		if len(nums) != 2 do continue
@@ -57,21 +57,31 @@ main :: proc() {
 
 
 		delete(nums)
-
 	}
 
 	//https://odin-lang.org/docs/overview/#sort-slices
 	slice1 := først_collone.nummers[:]
 	slice2 := andre_collone.nummers[:]
 
-	fmt.println(slice1)
 	slice.sort(slice1)
 	slice.sort(slice2)
+	total := 0
+	counter := 0
+	for value1 in slice1 {
+		if value1 == slice2[counter] {
+			counter = counter + 1
+			continue
+		}
+		if value1 > slice2[counter] {
 
-	fmt.println(slice1)
-
-	//	fmt.println(først_collone.nummers)
-	fmt.println("---------------------")
-	//	fmt.println(andre_collone.nummers)
-	fmt.println("---------------------")
+			res := value1 - slice2[counter]
+			total = total + res
+		}
+		if value1 < slice2[counter] {
+			res := slice2[counter] - value1
+			total = total + res
+		}
+		counter = counter + 1
+	}
+	fmt.println(total)
 }
