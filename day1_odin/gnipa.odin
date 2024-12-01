@@ -65,23 +65,45 @@ main :: proc() {
 
 	slice.sort(slice1)
 	slice.sort(slice2)
-	total := 0
-	counter := 0
-	for value1 in slice1 {
-		if value1 == slice2[counter] {
-			counter = counter + 1
-			continue
-		}
-		if value1 > slice2[counter] {
 
-			res := value1 - slice2[counter]
-			total = total + res
+	{ 	//part1
+		total := 0
+		counter := 0
+		for value1 in slice1 {
+			if value1 == slice2[counter] {
+				counter = counter + 1
+				continue
+			}
+			if value1 > slice2[counter] {
+
+				res := value1 - slice2[counter]
+				total = total + res
+			}
+			if value1 < slice2[counter] {
+				res := slice2[counter] - value1
+				total = total + res
+			}
+			counter = counter + 1
 		}
-		if value1 < slice2[counter] {
-			res := slice2[counter] - value1
-			total = total + res
-		}
-		counter = counter + 1
+		fmt.println(total)
 	}
-	fmt.println(total)
+
+	{ 	//part2
+		sum := 0
+		counter := 0
+
+		for value in slice1 {
+			local := 0
+			for valuex in slice2 {
+				if value == valuex {
+					local = local + 1
+				}
+			}
+			counter = counter + 1
+
+			temp := value * local
+			sum = sum + temp
+		}
+		fmt.println(sum)
+	}
 }
