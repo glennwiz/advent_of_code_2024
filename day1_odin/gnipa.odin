@@ -11,8 +11,50 @@ liste :: struct {
 	nummers: [dynamic]int,
 }
 
+test_pass :: proc(sl: [3]i32) {
+
+	fmt.println(sl)
+	v := sl
+
+	fmt.println(sl)
+	fmt.println("--", v[0])
+	fmt.println("--", &v[0])
+}
+
+test_pass2 :: proc(sl: []i32) {
+	fmt.println(sl)
+	v := sl
+
+	fmt.println(sl)
+	fmt.println("----", v[0])
+	fmt.println("----", &v[0])
+	fmt.println("----", &v[1])
+	fmt.println("----", &v[2])
+
+}
+
+
 main :: proc() {
 	path := "C:/dev/advent_of_code_2024/data/20241"
+
+	s := [3]i32{1, 2, 3}
+	fmt.println("-", s[0])
+	fmt.println("_", &s[0])
+	test_pass(s)
+
+	sl := s[:]
+	fmt.println("---", sl[0])
+	fmt.println("---", &sl[0])
+
+	test_pass2(sl)
+
+	x: rune
+	x = 0b10101010
+	fmt.println("-----", size_of(x))
+	fmt.println("-----", x)
+
+	first_bit := (x >> 7) & 1
+	fmt.println(first_bit)
 
 	//init structs
 	først_collone := liste {
@@ -62,6 +104,9 @@ main :: proc() {
 	//https://odin-lang.org/docs/overview/#sort-slices
 	slice1 := først_collone.nummers[:]
 	slice2 := andre_collone.nummers[:]
+
+	fmt.println(&slice1[0]) //0x0001
+	fmt.println(&først_collone.nummers[0]) //0x0001 
 
 	slice.sort(slice1)
 	slice.sort(slice2)
