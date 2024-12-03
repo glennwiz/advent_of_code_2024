@@ -5,18 +5,12 @@ internal class Program
 {
     private static async Task Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
-        var dr = new Tools.DataReader();
-       
-       // var resultText = File.ReadAllText("C:\\dev\\advent_of_code_2024\\data\\day2_test");
+        var dr = new Tools.DataReader();       
         var resultText = await dr.read_data("https://adventofcode.com/2024/day/2/input");
 
-        Console.WriteLine(resultText);
-
         var lines = resultText.Split("\n");
-
-
         var safeCounter = 0;
+
         part1();
         part2();
 
