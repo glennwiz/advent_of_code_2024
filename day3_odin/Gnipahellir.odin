@@ -46,8 +46,14 @@ main :: proc() {
 		fmt.println("mul:", mul.groups[1]) // mul: 684
 		fmt.println("mul:", mul.groups[2]) // mul: 550
 
-		num1, e1:= strconv.parse_int(mul.groups[1]) 
-		num2, e2:= strconv.parse_int(mul.groups[2])
+		//https://pkg.odin-lang.org/core/strconv/#parse_int
+		num1, ok1:= strconv.parse_int(mul.groups[1]) 
+		num2, ok2:= strconv.parse_int(mul.groups[2])
+
+		if ok1 != true || ok2 != true {
+			fmt.println("Error parsing int:", ok1, ok2)
+			return
+		}
 
 		the_sum += num1 * num2
 
