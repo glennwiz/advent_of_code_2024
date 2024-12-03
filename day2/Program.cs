@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Net.WebSockets;
-using day2;
 
 internal class Program
 {
@@ -8,22 +7,18 @@ internal class Program
     {
         Console.WriteLine("Hello, World!");
         var dr = new Tools.DataReader();
-        var day3= new day3();
-        //day3.part1();
-        day3.part2();
-
-        return;
+       
        // var resultText = File.ReadAllText("C:\\dev\\advent_of_code_2024\\data\\day2_test");
-        var resultText = await dr.read_data("https://adventofcode.com/2024/day/3/input");
+        var resultText = await dr.read_data("https://adventofcode.com/2024/day/2/input");
 
         Console.WriteLine(resultText);
 
-
         var lines = resultText.Split("\n");
 
+
         var safeCounter = 0;
-        //part1();
-        //part2();
+        part1();
+        part2();
 
         void part2() 
         { 

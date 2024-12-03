@@ -3,19 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day1", "day1\day1.csproj", "{165348BB-6DD1-4088-977A-C8FAD3CE49ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day1", "day1\day1.csproj", "{165348BB-6DD1-4088-977A-C8FAD3CE49ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "data_reader", "data_reader\data_reader.csproj", "{D7AD9780-2061-42C3-BEFD-11D88936D123}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "data_reader", "data_reader\data_reader.csproj", "{D7AD9780-2061-42C3-BEFD-11D88936D123}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day2", "day2\day2.csproj", "{2EF79EC9-C89E-44FE-B7C5-B6A2ED73EA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "day2", "day2\day2.csproj", "{2EF79EC9-C89E-44FE-B7C5-B6A2ED73EA67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "day3", "day3\day3.csproj", "{EBE521D6-9FC4-496E-AF0D-5DD1A78D9E73}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{165348BB-6DD1-4088-977A-C8FAD3CE49ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -30,5 +29,12 @@ Global
 		{2EF79EC9-C89E-44FE-B7C5-B6A2ED73EA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EF79EC9-C89E-44FE-B7C5-B6A2ED73EA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EF79EC9-C89E-44FE-B7C5-B6A2ED73EA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBE521D6-9FC4-496E-AF0D-5DD1A78D9E73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE521D6-9FC4-496E-AF0D-5DD1A78D9E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE521D6-9FC4-496E-AF0D-5DD1A78D9E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE521D6-9FC4-496E-AF0D-5DD1A78D9E73}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
