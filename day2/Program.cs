@@ -9,7 +9,8 @@ internal class Program
         Console.WriteLine("Hello, World!");
         var dr = new Tools.DataReader();
         var day3= new day3();
-        day3.part1();
+        //day3.part1();
+        day3.part2();
 
         return;
        // var resultText = File.ReadAllText("C:\\dev\\advent_of_code_2024\\data\\day2_test");

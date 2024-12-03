@@ -9,6 +9,60 @@ namespace day2
 {
     internal class day3
     {
+        public async void part2()
+        {
+            Console.WriteLine("Hello, World!");
+            var dr = new Tools.DataReader();
+            //var resultText = "xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))";
+            var resultText = await dr.read_data("https://adventofcode.com/2024/day/3/input");
+           
+            
+            
+            var result = GetSumPart2(resultText);        
+            
+            Console.WriteLine(result);
+        }
+
+        private int GetSumPart2(string resultText)
+        {
+            int theSum = 0;
+            bool mulEnabled = true;
+            int index = 0;
+
+            while (index < resultText.Length)
+            {
+                if (resultText.Substring(index).StartsWith("do()"))
+                {
+                    mulEnabled = true;
+                }
+
+
+                if (resultText.Substring(index).StartsWith("don't()"))
+                {
+                    mulEnabled = false;
+                }
+                
+                if(mulEnabled)
+                {
+                    var match = Regex.Match(resultText.Substring(index), @"^mul\((\d+),(\d+)\)");
+                    
+                    if (match.Success)
+                    {
+                        if (mulEnabled)
+                        {
+                            int num1 = int.Parse(match.Groups[1].Value);
+                            int num2 = int.Parse(match.Groups[2].Value);
+                            theSum += num1 * num2;
+                        }                        
+                    }                  
+                }
+
+                index++;
+            }
+
+            return theSum;
+        }
+
         public async void part1()
         {
             Console.WriteLine("Hello, World!");
