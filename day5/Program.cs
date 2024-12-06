@@ -56,6 +56,8 @@ foreach (var rule in rules)
 var lines = parts[1].Split("\r\n");
 
 var correctLines = new List<List<int>>();
+var errorLines = new List<List<int>>();
+
 var listOfNumbers = new List<List<int>>();
 foreach (var item in lines)
 {
@@ -90,6 +92,11 @@ for (int i = 0; i < listOfNumbers.Count(); i++)
     {
         correctLines.Add(nummerList);
     }
+    else
+    {
+        errorLines.Add(nummerList);
+    }
+
 
 }
 
@@ -105,3 +112,38 @@ foreach (var item in correctLines)
 var result = centerNumbers.Aggregate((a, b) => a + b);
 
 Console.WriteLine(result);
+
+List<int> BubbleOrderer(List<int> line, Dictionary<int, List<int>> dict)
+{
+    var change = true;
+    while (change)
+    {
+        change = false;
+        for (int i = 0; i < line.Count - 1; i++)
+        {
+            var n = line[i];
+            var n_n = line[i + 1];
+
+            if (dict.ContainsKey(n_n) && dict[n_n].Contains(n))
+            {
+                line[i] = n_n;
+                line[i + 1] = n;
+                change = true;
+            }
+        }
+    }
+
+    return line;
+}
+var reorderedLines = errorLines.Select(line => BubbleOrderer(line, dict)).ToList();
+
+centerNumbers = new List<int>();
+foreach (var line in reorderedLines)
+{
+    var center = line[line.Count / 2];
+    centerNumbers.Add(center);
+    Console.WriteLine($"Line: {string.Join(",", line)} - center: {center}");
+}
+
+var finalSum = centerNumbers.Sum();
+Console.WriteLine($"Final sum: {finalSum}");    
